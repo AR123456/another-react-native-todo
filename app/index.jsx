@@ -15,23 +15,7 @@ export default function Index() {
       const newId = todos.length > 0 ? todos[0].id + 1 : 1;
       // create this todo object then spread in the rest
       setTodos([{ id: newId, title: text, completed: false }, ...todos]);
-      // set text in input back to null
-      setText("");
     }
-  };
-  // read flat list
-
-  // toggle complete or not
-  const toggleTodo = (id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo,
-      ),
-    );
-  };
-  // delete todo
-  const removeTodo = (id) => {
-    setTodos(todos.map((todo) => (todo.id === id ? { ...todo } : todo)));
   };
   return (
     <SafeAreaView>
