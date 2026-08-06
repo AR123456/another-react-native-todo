@@ -4,8 +4,10 @@ import { useState } from "react";
 // test data
 import { data } from "@/data/todos";
 export default function Index() {
-  // getters setters  - sort data so newest todo is first on list
+  // getters setters  - sort data so newest todo is first/top on list
   const [todos, setTodos] = useState(data.sort((a, b) => b.id - a.id));
+  // text input
+  const [text, setText] = useState("");
   return (
     <SafeAreaView>
       <View
