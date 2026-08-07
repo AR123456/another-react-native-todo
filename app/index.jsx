@@ -35,13 +35,7 @@ export default function Index() {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <View style={styles.inputContainer}>
         {/* text input and a pressable or button  */}
         <Text>The todo List </Text>
 
@@ -58,9 +52,19 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "red",
+    backgroundColor: "black",
   },
-  inputContainer: {},
+  inputContainer: {
+    backgroundColor: "red",
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 10,
+    padding: 10,
+    width: "100%",
+    maxWidth: 1024,
+    marginHorizontal: "auto",
+    pointerEvents: "auto",
+  },
   input: {
     flex: 1,
     borderColor: "gray",
