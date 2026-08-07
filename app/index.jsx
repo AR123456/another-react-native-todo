@@ -45,7 +45,7 @@ export default function Index() {
         {/* text input and a pressable or button  */}
         <Text>The todo List </Text>
 
-        <TextInput />
+        <TextInput style={styles.input} />
         <Pressable>
           <Text>Add todo</Text>
         </Pressable>
@@ -59,5 +59,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "red",
+  },
+  inputContainer: {},
+  input: {
+    flex: 1,
+    borderColor: "gray",
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 10,
+    marginRight: 10,
+    fontSize: 18,
+    minWidth: 0,
+    color: "white",
   },
 });
