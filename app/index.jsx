@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Text, View, TextInput, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 // test data
@@ -31,7 +31,7 @@ export default function Index() {
   };
   // delete todo
   const removeTodo = (id) => {
-    setTodos(todos.map((todo) => (todo.id === id ? { ...todo } : todo)));
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
   return (
     <SafeAreaView>
@@ -42,7 +42,13 @@ export default function Index() {
           alignItems: "center",
         }}
       >
-        <Text>Edit app/index.tsx to edit this screen.</Text>
+        {/* text input and a pressable or button  */}
+        <Text>The todo List </Text>
+
+        <TextInput />
+        <Pressable>
+          <Text>Add todo</Text>
+        </Pressable>
       </View>
     </SafeAreaView>
   );
