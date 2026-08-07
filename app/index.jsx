@@ -1,4 +1,4 @@
-import { Text, View, TextInput, Pressable } from "react-native";
+import { Text, View, TextInput, Pressable, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 // test data
@@ -34,7 +34,7 @@ export default function Index() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <View
         style={{
           flex: 1,
@@ -50,6 +50,14 @@ export default function Index() {
           <Text>Add todo</Text>
         </Pressable>
       </View>
+      {/* flat list here */}
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "red",
+  },
+});
