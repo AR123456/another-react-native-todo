@@ -36,9 +36,6 @@ export default function Index() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inputContainer}>
-        {/* text input and a pressable or button  */}
-        <Text>The todo List </Text>
-
         <TextInput
           style={styles.input}
           placeholder="Add a new todo"
@@ -46,8 +43,8 @@ export default function Index() {
           value={text}
           onChangeText={setText}
         />
-        <Pressable>
-          <Text>Add todo</Text>
+        <Pressable onPress={addTodo} style={styles.addButton}>
+          <Text style={styles.addButtonText}>Add todo</Text>
         </Pressable>
       </View>
       {/* flat list here */}
@@ -61,7 +58,6 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
   },
   inputContainer: {
-    backgroundColor: "red",
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 10,
@@ -81,5 +77,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     minWidth: 0,
     color: "white",
+  },
+  addButton: {
+    backgroundColor: "white",
+    borderRadius: 5,
+    padding: 10,
+  },
+  addButtonText: {
+    fontSize: 18,
+    color: "black",
   },
 });
