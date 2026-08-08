@@ -39,13 +39,7 @@ export default function Index() {
         {/* text input and a pressable or button  */}
         <Text>The todo List </Text>
 
-        <TextInput
-          style={styles.input}
-          placeholder="Add a new todo"
-          placeholderTextColor="gray"
-          value={text}
-          onChangeText={setText}
-        />
+        <TextInput style={styles.input} />
         <Pressable>
           <Text>Add todo</Text>
         </Pressable>
