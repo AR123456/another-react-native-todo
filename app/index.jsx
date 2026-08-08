@@ -44,7 +44,7 @@ export default function Index() {
           onChangeText={setText}
         />
         <Pressable onPress={addTodo} style={styles.addButton}>
-          <Text>Add todo</Text>
+          <Text style={styles.addButtonText}>Add todo</Text>
         </Pressable>
       </View>
       {/* flat list here */}
@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
   },
   inputContainer: {
-    backgroundColor: "red",
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 10,
@@ -83,5 +82,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 5,
     padding: 10,
+  },
+  addButtonText: {
+    fontSize: 18,
+    color: "black",
   },
 });
