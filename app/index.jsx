@@ -57,7 +57,10 @@ export default function Index() {
       <FlatList
         // todo state
         data={todos}
-      ></FlatList>
+        // renderItem={}
+        keyExtractor={(todo) => todo.id}
+        contentContainerStyle={{ flexGrow: 1 }}
+      />
     </SafeAreaView>
   );
 }
