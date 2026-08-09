@@ -87,4 +87,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "black",
   },
+  // for flat list of items
+  todoItem: {},
+  todoText: {},
+  completedText: {},
 });
