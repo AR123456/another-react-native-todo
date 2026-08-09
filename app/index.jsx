@@ -106,5 +106,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "white",
   },
-  completedText: {},
+  completedText: {
+    textDecorationLine: "line-through",
+    color: "gray",
+  },
 });
