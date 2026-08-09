@@ -88,7 +88,19 @@ const styles = StyleSheet.create({
     color: "black",
   },
   // for flat list of items
-  todoItem: {},
+  todoItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 4,
+    padding: 10,
+    borderBottomColor: "gray",
+    borderBottomWidth: 1,
+    width: "100%",
+    maxWidth: 1024,
+    marginHorizontal: "auto",
+    pointerEvents: "auto",
+  },
   todoText: {},
   completedText: {},
 });
