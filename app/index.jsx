@@ -1,4 +1,11 @@
-import { Text, View, TextInput, Pressable, StyleSheet } from "react-native";
+import {
+  Text,
+  View,
+  TextInput,
+  Pressable,
+  StyleSheet,
+  FlatList,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 // test data
@@ -47,7 +54,10 @@ export default function Index() {
           <Text style={styles.addButtonText}>Add todo</Text>
         </Pressable>
       </View>
-      {/* flat list here */}
+      <FlatList
+        // todo state
+        data={todos}
+      ></FlatList>
     </SafeAreaView>
   );
 }
