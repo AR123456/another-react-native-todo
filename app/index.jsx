@@ -44,8 +44,10 @@ export default function Index() {
   // for each todo item
   const renderItem = ({ item }) => (
     <View>
-      {" "}
-      <Text>This is text of item</Text>
+      <Text>{item.title}</Text>
+      <Pressable>
+        <MaterialCommunityIcons></MaterialCommunityIcons>
+      </Pressable>
     </View>
   );
   return (
@@ -65,7 +67,7 @@ export default function Index() {
       <FlatList
         // todo state
         data={todos}
-        renderItem={renderItem}
+        // renderItem={renderItem}
         keyExtractor={(todo) => todo.id}
         contentContainerStyle={{ flexGrow: 1 }}
       />
