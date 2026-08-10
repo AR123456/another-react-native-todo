@@ -46,7 +46,12 @@ export default function Index() {
     <View>
       <Text>{item.title}</Text>
       <Pressable>
-        <MaterialCommunityIcons></MaterialCommunityIcons>
+        <MaterialCommunityIcons
+          name="delete-circle"
+          size={36}
+          color="red"
+          selectable={undefined}
+        />
       </Pressable>
     </View>
   );
