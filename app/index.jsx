@@ -42,7 +42,12 @@ export default function Index() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
   // for each todo item
-  const renderItem = ({ item }) => <View>text for rendered item</View>;
+  const renderItem = ({ item }) => (
+    <View>
+      {" "}
+      <Text>This is text of item</Text>
+    </View>
+  );
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inputContainer}>
@@ -60,7 +65,7 @@ export default function Index() {
       <FlatList
         // todo state
         data={todos}
-        // renderItem={}
+        renderItem={renderItem}
         keyExtractor={(todo) => todo.id}
         contentContainerStyle={{ flexGrow: 1 }}
       />
