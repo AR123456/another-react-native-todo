@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 // test data
 import { data } from "@/data/todos";
 export default function Index() {
@@ -52,6 +53,9 @@ export default function Index() {
         />
         <Pressable onPress={addTodo} style={styles.addButton}>
           <Text style={styles.addButtonText}>Add todo</Text>
+        </Pressable>
+        <Pressable>
+          <MaterialCommunityIcons name="delete-circle" size={24} color="red" />
         </Pressable>
       </View>
       <FlatList
