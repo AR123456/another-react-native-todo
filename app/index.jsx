@@ -41,6 +41,8 @@ export default function Index() {
   const removeTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
+  // for each todo item
+  const renderItem = ({ item }) => <View>text for rendered item</View>;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inputContainer}>
@@ -53,9 +55,6 @@ export default function Index() {
         />
         <Pressable onPress={addTodo} style={styles.addButton}>
           <Text style={styles.addButtonText}>Add todo</Text>
-        </Pressable>
-        <Pressable>
-          <MaterialCommunityIcons name="delete-circle" size={24} color="red" />
         </Pressable>
       </View>
       <FlatList
