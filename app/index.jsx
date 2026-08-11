@@ -77,7 +77,7 @@ export default function Index() {
       <FlatList
         // todo state
         data={todos}
-        // renderItem={renderItem}
+        renderItem={renderItem}
         keyExtractor={(todo) => todo.id}
         contentContainerStyle={{ flexGrow: 1 }}
       />
