@@ -44,7 +44,10 @@ export default function Index() {
   // for each todo item
   const renderItem = ({ item }) => (
     <View style={styles.todoItem}>
-      <Text style={[styles.todoText, item.completed && styles.completedText]}>
+      <Text
+        style={[styles.todoText, item.completed && styles.completedText]}
+        onPress={() => toggleTodo(item.id)}
+      >
         {item.title}
       </Text>
       <Pressable>
