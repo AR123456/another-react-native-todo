@@ -21,6 +21,11 @@ export default function Index() {
   const [loaded, error] = useFonts({
     Inter_500Medium,
   });
+  // check state for font- wait for it to load
+  if (!loaded && !error) {
+    return null;
+  }
+
   const addTodo = () => {
     //remove extra spaces
     if (text.trim()) {
@@ -32,7 +37,6 @@ export default function Index() {
       setText("");
     }
   };
-  // read flat list
 
   // toggle complete or not
   const toggleTodo = (id) => {
