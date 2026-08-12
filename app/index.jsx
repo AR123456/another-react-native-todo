@@ -17,6 +17,10 @@ export default function Index() {
   const [todos, setTodos] = useState(data.sort((a, b) => b.id - a.id));
   // text input
   const [text, setText] = useState("");
+  // which font based on error state
+  const [loaded, error] = useFonts({
+    Inter_500Medium,
+  });
   const addTodo = () => {
     //remove extra spaces
     if (text.trim()) {
