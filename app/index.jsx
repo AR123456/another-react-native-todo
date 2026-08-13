@@ -17,15 +17,6 @@ export default function Index() {
   const [todos, setTodos] = useState(data.sort((a, b) => b.id - a.id));
   // text input
   const [text, setText] = useState("");
-  // which font based on error state
-  const [loaded, error] = useFonts({
-    Inter_500Medium,
-  });
-  // check state for font- wait for it to load
-  if (!loaded && !error) {
-    return null;
-  }
-
   const addTodo = () => {
     //remove extra spaces
     if (text.trim()) {
@@ -37,6 +28,7 @@ export default function Index() {
       setText("");
     }
   };
+  // read flat list
 
   // toggle complete or not
   const toggleTodo = (id) => {
@@ -117,7 +109,6 @@ const styles = StyleSheet.create({
     padding: 10,
     marginRight: 10,
     fontSize: 18,
-    fontFamily: "Inter_500Medium",
     minWidth: 0,
     color: "white",
   },
@@ -148,7 +139,6 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 18,
     color: "white",
-    fontFamily: "Inter_500Medium",
   },
   completedText: {
     textDecorationLine: "line-through",
