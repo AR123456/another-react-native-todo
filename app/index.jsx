@@ -76,7 +76,26 @@ export default function Index() {
         onPress={() =>
           setColorScheme(colorScheme === "light" ? "dark" : "light")
         }
-      ></Pressable>
+        style={{ marginLeft: 10 }}
+      >
+        {colorScheme === "dark" ? (
+          <Octicons
+            name="moon"
+            size={36}
+            color={theme.text}
+            selectable={undefined}
+            style={{ width: 36 }}
+          ></Octicons>
+        ) : (
+          <Octicons
+            name="sun"
+            size={36}
+            color={theme.text}
+            selectable={undefined}
+            style={{ width: 36 }}
+          ></Octicons>
+        )}
+      </Pressable>
     </View>
   );
   return (
