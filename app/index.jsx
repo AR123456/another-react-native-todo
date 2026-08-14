@@ -11,6 +11,8 @@ import { useState, useContext } from "react";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { Inter_500Medium, useFonts } from "@expo-google-fonts/inter";
 import { ThemeContext } from "@/context/ThemeContext";
+// sun and moon icons
+import Octicons from "@expo/vector-icons/Octicons";
 // test data
 import { data } from "@/data/todos";
 export default function Index() {
@@ -18,6 +20,8 @@ export default function Index() {
   const [todos, setTodos] = useState(data.sort((a, b) => b.id - a.id));
   // text input
   const [text, setText] = useState("");
+  // color scheme
+  const { colorScheme, setColorScheme, theme } = useContext(ThemeContext);
   // which font based on error state
   const [loaded, error] = useFonts({
     Inter_500Medium,
@@ -68,6 +72,11 @@ export default function Index() {
           selectable={undefined}
         />
       </Pressable>
+      <Pressable
+        onPress={() =>
+          setColorScheme(colorScheme === "light" ? "dark" : "light")
+        }
+      ></Pressable>
     </View>
   );
   return (
