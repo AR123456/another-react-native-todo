@@ -72,37 +72,6 @@ export default function Index() {
           selectable={undefined}
         />
       </Pressable>
-      <Pressable
-        onPress={() =>
-          setColorScheme(colorScheme === "light" ? "dark" : "light")
-        }
-        style={{ marginLeft: 10 }}
-      >
-        {colorScheme === "dark" ? (
-          <Octicons
-            name="moon"
-            size={36}
-            color={theme.text}
-            selectable={undefined}
-            style={{ width: 36 }}
-          ></Octicons>
-        ) : (
-          <Octicons
-            name="sun"
-            size={36}
-            color={theme.text}
-            selectable={undefined}
-            style={{ width: 36 }}
-          ></Octicons>
-        )}
-        {/* <Octicons
-          name={colorScheme === "dark" ? "moon" : "sun"}
-          size={36}
-          color={theme.text}
-          selectable={undefined}
-          style={{ width: 36 }}
-        ></Octicons> */}
-      </Pressable>
     </View>
   );
   return (
@@ -117,6 +86,20 @@ export default function Index() {
         />
         <Pressable onPress={addTodo} style={styles.addButton}>
           <Text style={styles.addButtonText}>Add todo</Text>
+        </Pressable>
+        <Pressable
+          onPress={() =>
+            setColorScheme(colorScheme === "light" ? "dark" : "light")
+          }
+          style={{ marginLeft: 10 }}
+        >
+          <Octicons
+            name={colorScheme === "dark" ? "moon" : "sun"}
+            size={36}
+            color={theme.text}
+            selectable={undefined}
+            style={{ width: 36 }}
+          ></Octicons>
         </Pressable>
       </View>
       <FlatList
