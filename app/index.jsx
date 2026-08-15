@@ -30,7 +30,7 @@ export default function Index() {
   if (!loaded && !error) {
     return null;
   }
-
+  const styles = createStyles(theme, colorScheme);
   const addTodo = () => {
     //remove extra spaces
     if (text.trim()) {
