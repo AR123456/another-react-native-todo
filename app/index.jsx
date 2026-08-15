@@ -133,7 +133,7 @@ function createStyles(theme, colorScheme) {
   return StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "black",
+      backgroundColor: theme.background,
     },
     inputContainer: {
       flexDirection: "row",
@@ -155,16 +155,16 @@ function createStyles(theme, colorScheme) {
       fontSize: 18,
       fontFamily: "Inter_500Medium",
       minWidth: 0,
-      color: "white",
+      color: theme.text,
     },
     addButton: {
-      backgroundColor: "white",
+      backgroundColor: theme.button,
       borderRadius: 5,
       padding: 10,
     },
     addButtonText: {
       fontSize: 18,
-      color: "black",
+      color: colorScheme === "dark" ? "black" : "white",
     },
     // for flat list of items
     todoItem: {
@@ -183,7 +183,7 @@ function createStyles(theme, colorScheme) {
     todoText: {
       flex: 1,
       fontSize: 18,
-      color: "white",
+      color: theme.text,
       fontFamily: "Inter_500Medium",
     },
     completedText: {
