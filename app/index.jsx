@@ -13,6 +13,8 @@ import { Inter_500Medium, useFonts } from "@expo-google-fonts/inter";
 import { ThemeContext } from "@/context/ThemeContext";
 // sun and moon icons
 import Octicons from "@expo/vector-icons/Octicons";
+// animations vis react reanimated
+import Animated, { LinearTransition } from "react-native-reanimated";
 // test data
 import { data } from "@/data/todos";
 export default function Index() {
