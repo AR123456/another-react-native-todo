@@ -110,6 +110,9 @@ export default function Index() {
         renderItem={renderItem}
         keyExtractor={(todo) => todo.id}
         contentContainerStyle={{ flexGrow: 1 }}
+        // animation props
+        itemLayoutAnimation={LinearTransition}
+        keyboardDismissMode="on-drag"
       />
     </SafeAreaView>
   );
