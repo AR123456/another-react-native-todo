@@ -13,8 +13,6 @@ import { Inter_500Medium, useFonts } from "@expo-google-fonts/inter";
 import { ThemeContext } from "@/context/ThemeContext";
 // sun and moon icons
 import Octicons from "@expo/vector-icons/Octicons";
-// animations vis react reanimated
-import Animated, { LinearTransition } from "react-native-reanimated";
 // test data
 import { data } from "@/data/todos";
 export default function Index() {
@@ -32,7 +30,7 @@ export default function Index() {
   if (!loaded && !error) {
     return null;
   }
-  const styles = createStyles(theme, colorScheme);
+
   const addTodo = () => {
     //remove extra spaces
     if (text.trim()) {
@@ -74,6 +72,37 @@ export default function Index() {
           selectable={undefined}
         />
       </Pressable>
+      <Pressable
+        onPress={() =>
+          setColorScheme(colorScheme === "light" ? "dark" : "light")
+        }
+        style={{ marginLeft: 10 }}
+      >
+        {/* {colorScheme === "dark" ? (
+          <Octicons
+            name="moon"
+            size={36}
+            color={theme.text}
+            selectable={undefined}
+            style={{ width: 36 }}
+          ></Octicons>
+        ) : (
+          <Octicons
+            name="sun"
+            size={36}
+            color={theme.text}
+            selectable={undefined}
+            style={{ width: 36 }}
+          ></Octicons>
+        )} */}
+        <Octicons
+          name={colorScheme === "dark" ? "moon" : "sun"}
+          size={36}
+          color={theme.text}
+          selectable={undefined}
+          style={{ width: 36 }}
+        ></Octicons>
+      </Pressable>
     </View>
   );
   return (
@@ -88,20 +117,6 @@ export default function Index() {
         />
         <Pressable onPress={addTodo} style={styles.addButton}>
           <Text style={styles.addButtonText}>Add todo</Text>
-        </Pressable>
-        <Pressable
-          onPress={() =>
-            setColorScheme(colorScheme === "light" ? "dark" : "light")
-          }
-          style={{ marginLeft: 10 }}
-        >
-          <Octicons
-            name={colorScheme === "dark" ? "moon" : "sun"}
-            size={36}
-            color={theme.text}
-            selectable={undefined}
-            style={{ width: 36 }}
-          ></Octicons>
         </Pressable>
       </View>
       <FlatList
