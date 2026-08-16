@@ -15,6 +15,7 @@ import { ThemeContext } from "@/context/ThemeContext";
 import Octicons from "@expo/vector-icons/Octicons";
 // animations vis react reanimated
 import Animated, { LinearTransition } from "react-native-reanimated";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 // test data
 import { data } from "@/data/todos";
 export default function Index() {
