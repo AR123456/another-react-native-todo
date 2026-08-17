@@ -37,7 +37,10 @@ export default function Index() {
         const jsonValue = await AsyncStorage.getItem("TodoApp");
         // parse json if it does not exist return null
         const storageTodos = jsonValue != null ? JSON.parse(jsonValue) : null;
-        //
+        // if there are stored run setter setTodos
+        if (storageTodos && storageTodos.length) {
+          setTodos(storageTodos);
+        }
       } catch (e) {
         console.error(e);
       }
