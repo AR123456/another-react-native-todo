@@ -15,7 +15,6 @@ import { ThemeContext } from "@/context/ThemeContext";
 import Octicons from "@expo/vector-icons/Octicons";
 // animations vis react reanimated
 import Animated, { LinearTransition } from "react-native-reanimated";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 // test data
 import { data } from "@/data/todos";
 export default function Index() {
@@ -111,9 +110,6 @@ export default function Index() {
         renderItem={renderItem}
         keyExtractor={(todo) => todo.id}
         contentContainerStyle={{ flexGrow: 1 }}
-        // animation props
-        itemLayoutAnimation={LinearTransition}
-        keyboardDismissMode="on-drag"
       />
     </SafeAreaView>
   );
