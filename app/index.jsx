@@ -31,7 +31,13 @@ export default function Index() {
   });
   // need to put useEffect before fonts load
   useEffect(() => {
-    //
+    const fetchData = async () => {
+      try {
+        // retrive local data if it exists
+      } catch (e) {
+        console.error(e);
+      }
+    };
   }, []);
   // check state for font- wait for it to load
   if (!loaded && !error) {
