@@ -41,6 +41,7 @@ export default function Index() {
         if (storageTodos && storageTodos.length) {
           setTodos(storageTodos.sort((a, b) => b.id - a.id));
         } else {
+          setTodos(data.sort((a, b) => b.id - a.id));
         }
       } catch (e) {
         console.error(e);
