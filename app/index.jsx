@@ -7,7 +7,7 @@ import {
   FlatList,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { Inter_500Medium, useFonts } from "@expo-google-fonts/inter";
 import { ThemeContext } from "@/context/ThemeContext";
@@ -15,7 +15,6 @@ import { ThemeContext } from "@/context/ThemeContext";
 import Octicons from "@expo/vector-icons/Octicons";
 // animations vis react reanimated
 import Animated, { LinearTransition } from "react-native-reanimated";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 // test data
 import { data } from "@/data/todos";
 export default function Index() {
@@ -29,23 +28,6 @@ export default function Index() {
   const [loaded, error] = useFonts({
     Inter_500Medium,
   });
-  // need to put useEffect before fonts load
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // retrive local data if it
-        const jsonValue = await AsyncStorage.getItem("TodoApp");
-        // parse json if it does not exist return null
-        const storageTodos = jsonValue != null ? JSON.parse(jsonValue) : null;
-        // if there are stored run setter setTodos
-        if (storageTodos && storageTodos.length) {
-          setTodos(storageTodos);
-        }
-      } catch (e) {
-        console.error(e);
-      }
-    };
-  }, []);
   // check state for font- wait for it to load
   if (!loaded && !error) {
     return null;
@@ -128,9 +110,6 @@ export default function Index() {
         renderItem={renderItem}
         keyExtractor={(todo) => todo.id}
         contentContainerStyle={{ flexGrow: 1 }}
-        // animation props
-        itemLayoutAnimation={LinearTransition}
-        keyboardDismissMode="on-drag"
       />
     </SafeAreaView>
   );
