@@ -33,7 +33,6 @@ export default function Index() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // retrive local data if it
         const jsonValue = await AsyncStorage.getItem("TodoApp");
         // parse json if it does not exist return null
         const storageTodos = jsonValue != null ? JSON.parse(jsonValue) : null;
@@ -47,6 +46,7 @@ export default function Index() {
         console.error(e);
       }
     };
+    fetchData();
   }, []);
   // check state for font- wait for it to load
   if (!loaded && !error) {
