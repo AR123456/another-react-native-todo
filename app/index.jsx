@@ -19,8 +19,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 // test data
 import { data } from "@/data/todos";
 export default function Index() {
-  // getters setters  - sort data so newest todo is first/top on list
-  const [todos, setTodos] = useState(data.sort((a, b) => b.id - a.id));
+  // getters setters  - now empty array to be loaded from useEffect to get from async storage
+  const [todos, setTodos] = useState([]);
   // text input
   const [text, setText] = useState("");
   // color scheme
