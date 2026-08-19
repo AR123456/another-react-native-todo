@@ -52,6 +52,7 @@ export default function Index() {
   useEffect(() => {
     const storeData = async () => {
       try {
+        const jsonValue = JSON.stringify(todos);
       } catch (e) {
         console.error(e);
       }
