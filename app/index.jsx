@@ -53,7 +53,7 @@ export default function Index() {
     const storeData = async () => {
       try {
         const jsonValue = JSON.stringify(todos);
-        await AsyncStorage.setItem("TodoApp");
+        await AsyncStorage.setItem("TodoApp", jsonValue);
       } catch (e) {
         console.error(e);
       }
