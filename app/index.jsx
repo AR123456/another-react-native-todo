@@ -29,7 +29,7 @@ export default function Index() {
   const [loaded, error] = useFonts({
     Inter_500Medium,
   });
-  // need to put useEffect before fonts load
+  // need to put useEffect before fonts load - load local if there
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -48,6 +48,13 @@ export default function Index() {
     };
     fetchData();
   }, []);
+  // save latest to local
+  useEffect(() => {
+    const storeData = async () => {
+      try {
+      } catch (error) {}
+    };
+  }, [todos]);
   // check state for font- wait for it to load
   if (!loaded && !error) {
     return null;
