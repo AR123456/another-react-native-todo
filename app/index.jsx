@@ -52,7 +52,9 @@ export default function Index() {
   useEffect(() => {
     const storeData = async () => {
       try {
-      } catch (error) {}
+      } catch (e) {
+        console.error(e);
+      }
     };
   }, [todos]);
   // check state for font- wait for it to load
