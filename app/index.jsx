@@ -53,11 +53,13 @@ export default function Index() {
     const storeData = async () => {
       try {
         const jsonValue = JSON.stringify(todos);
-        await AsyncStorage.setItem("TodoApp");
+        await AsyncStorage.setItem("TodoApp", jsonValue);
       } catch (e) {
         console.error(e);
       }
     };
+    // anytime todo state changes call storeData
+    storeData();
   }, [todos]);
   // check state for font- wait for it to load
   if (!loaded && !error) {
