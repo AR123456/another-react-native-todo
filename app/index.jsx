@@ -11,17 +11,13 @@ import { useState, useContext, useEffect } from "react";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { Inter_500Medium, useFonts } from "@expo-google-fonts/inter";
 import { ThemeContext } from "@/context/ThemeContext";
+// sun and moon icons
+import Octicons from "@expo/vector-icons/Octicons";
 // animations vis react reanimated
 import Animated, { LinearTransition } from "react-native-reanimated";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-// getting status bar in light and dark mode
-import { StatusBar } from "expo-status-bar";
-import { useRouter } from "expo-router";
-// sun and moon icons
-import Octicons from "@expo/vector-icons/Octicons";
 // test data
 import { data } from "@/data/todos";
-
 export default function Index() {
   // getters setters  - now empty array to be loaded from useEffect to get from async storage
   const [todos, setTodos] = useState([]);
@@ -29,8 +25,6 @@ export default function Index() {
   const [text, setText] = useState("");
   // color scheme
   const { colorScheme, setColorScheme, theme } = useContext(ThemeContext);
-  // set up for expo router
-  const router = useRouter();
   // which font based on error state
   const [loaded, error] = useFonts({
     Inter_500Medium,
@@ -59,13 +53,10 @@ export default function Index() {
     const storeData = async () => {
       try {
         const jsonValue = JSON.stringify(todos);
-        await AsyncStorage.setItem("TodoApp", jsonValue);
       } catch (e) {
         console.error(e);
       }
     };
-    // anytime todo state changes call storeData
-    storeData();
   }, [todos]);
   // check state for font- wait for it to load
   if (!loaded && !error) {
@@ -96,21 +87,15 @@ export default function Index() {
   const removeTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
-  const handlePress = (id) => {
-    // use route to go to a page that shows todo detail
-    router.push(`/todos/${id}`);
-  };
   // for each todo item
   const renderItem = ({ item }) => (
     <View style={styles.todoItem}>
-      <Pressable
-        onPress={() => handlePress(item.id)}
-        onLongPress={() => toggleTodo(item.id)}
+      <Text
+        style={[styles.todoText, item.completed && styles.completedText]}
+        onPress={() => toggleTodo(item.id)}
       >
-        <Text style={[styles.todoText, item.completed && styles.completedText]}>
-          {item.title}
-        </Text>
-      </Pressable>
+        {item.title}
+      </Text>
       <Pressable onPress={() => removeTodo(item.id)}>
         <MaterialCommunityIcons
           name="delete-circle"
@@ -159,7 +144,6 @@ export default function Index() {
         itemLayoutAnimation={LinearTransition}
         keyboardDismissMode="on-drag"
       />
-      <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
     </SafeAreaView>
   );
 }
