@@ -11,11 +11,13 @@ import { useState, useContext, useEffect } from "react";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { Inter_500Medium, useFonts } from "@expo-google-fonts/inter";
 import { ThemeContext } from "@/context/ThemeContext";
-// sun and moon icons
-import Octicons from "@expo/vector-icons/Octicons";
 // animations vis react reanimated
 import Animated, { LinearTransition } from "react-native-reanimated";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+// getting status bar in light and dark mode
+import { StatusBar } from "expo-status-bar";
+// sun and moon icons
+import Octicons from "@expo/vector-icons/Octicons";
 // test data
 import { data } from "@/data/todos";
 export default function Index() {
