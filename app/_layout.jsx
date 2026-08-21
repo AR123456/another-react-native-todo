@@ -6,7 +6,7 @@ export default function RootLayout() {
     <ThemeProvider>
       <SafeAreaProvider>
         <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="index" />
         </Stack>
       </SafeAreaProvider>
     </ThemeProvider>
