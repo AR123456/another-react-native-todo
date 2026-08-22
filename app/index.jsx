@@ -95,7 +95,10 @@ export default function Index() {
   // for each todo item
   const renderItem = ({ item }) => (
     <View style={styles.todoItem}>
-      <Pressable onLongPress={() => toggleTodo(item.id)}>
+      <Pressable
+        onPress={() => handlePress(item.id)}
+        onLongPress={() => toggleTodo(item.id)}
+      >
         <Text style={[styles.todoText, item.completed && styles.completedText]}>
           {item.title}
         </Text>
