@@ -16,6 +16,7 @@ import Animated, { LinearTransition } from "react-native-reanimated";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 // getting status bar in light and dark mode
 import { StatusBar } from "expo-status-bar";
+import { useRouter } from "expo-router";
 // sun and moon icons
 import Octicons from "@expo/vector-icons/Octicons";
 // test data
@@ -91,6 +92,10 @@ export default function Index() {
   // delete todo
   const removeTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
+  };
+  const handlePress = (id) => {
+    // use route to go to a page that shows todo detail
+    alert("regular press");
   };
   // for each todo item
   const renderItem = ({ item }) => (
