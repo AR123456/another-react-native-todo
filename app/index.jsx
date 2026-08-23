@@ -95,7 +95,7 @@ export default function Index() {
   };
   const handlePress = (id) => {
     // use route to go to a page that shows todo detail
-    alert("regular press");
+    useRouter.navigate("/app/todos/[id].jsx");
   };
   // for each todo item
   const renderItem = ({ item }) => (
