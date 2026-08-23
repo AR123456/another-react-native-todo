@@ -21,7 +21,6 @@ import { useRouter } from "expo-router";
 import Octicons from "@expo/vector-icons/Octicons";
 // test data
 import { data } from "@/data/todos";
-
 export default function Index() {
   // getters setters  - now empty array to be loaded from useEffect to get from async storage
   const [todos, setTodos] = useState([]);
@@ -29,8 +28,6 @@ export default function Index() {
   const [text, setText] = useState("");
   // color scheme
   const { colorScheme, setColorScheme, theme } = useContext(ThemeContext);
-  // set up for expo router
-  const router = useRouter();
   // which font based on error state
   const [loaded, error] = useFonts({
     Inter_500Medium,
@@ -98,7 +95,7 @@ export default function Index() {
   };
   const handlePress = (id) => {
     // use route to go to a page that shows todo detail
-    router.push(`/todos/${id}`);
+    alert("regular press");
   };
   // for each todo item
   const renderItem = ({ item }) => (
