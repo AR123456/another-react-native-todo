@@ -28,6 +28,8 @@ export default function Index() {
   const [text, setText] = useState("");
   // color scheme
   const { colorScheme, setColorScheme, theme } = useContext(ThemeContext);
+  // set up for expo router
+  const router = useRouter();
   // which font based on error state
   const [loaded, error] = useFonts({
     Inter_500Medium,
@@ -95,7 +97,7 @@ export default function Index() {
   };
   const handlePress = (id) => {
     // use route to go to a page that shows todo detail
-    useRouter.replace("/app/todos/[id].jsx");
+    router.replace("/app/todos/[id].jsx");
   };
   // for each todo item
   const renderItem = ({ item }) => (
