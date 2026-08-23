@@ -21,7 +21,7 @@ import { useRouter } from "expo-router";
 import Octicons from "@expo/vector-icons/Octicons";
 // test data
 import { data } from "@/data/todos";
-import EditScreen from "./todos/[id]";
+
 export default function Index() {
   // getters setters  - now empty array to be loaded from useEffect to get from async storage
   const [todos, setTodos] = useState([]);
@@ -98,7 +98,7 @@ export default function Index() {
   };
   const handlePress = (id) => {
     // use route to go to a page that shows todo detail
-    EditScreen();
+    router.push(`/todos/${id}`);
   };
   // for each todo item
   const renderItem = ({ item }) => (
