@@ -13,6 +13,8 @@ import { useRouter } from "expo-router";
 export default function EditScreen() {
   // when hook called id value passed to route
   const { id } = useLocalSearchParams();
+  const [todo, setTodo] = useState({});
+
   return (
     <View>
       <Text>{id}</Text>
