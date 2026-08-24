@@ -6,6 +6,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { ThemeContext } from "@/context/ThemeContext";
 import { StatusBar } from "expo-status-bar";
 import { Inter_500Medium, useFonts } from "@expo-google-fonts/inter";
+import Octicons from "@expo/vector-icons/Octicons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useRouter } from "expo-router";
 
 export default function EditScreen() {
   // when hook called id value passed to route
