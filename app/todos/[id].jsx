@@ -22,6 +22,10 @@ export default function EditScreen() {
     Inter_500Medium,
   });
   useEffect(() => {}, []);
+  // check state for font- wait for it to load
+  if (!loaded && !error) {
+    return null;
+  }
   return (
     <View>
       <Text>{id}</Text>
