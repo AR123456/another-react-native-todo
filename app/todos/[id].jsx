@@ -14,7 +14,14 @@ export default function EditScreen() {
   // when hook called id value passed to route
   const { id } = useLocalSearchParams();
   const [todo, setTodo] = useState({});
-
+  // color scheme
+  const { colorScheme, setColorScheme, theme } = useContext(ThemeContext);
+  const router = useRouter();
+  // which font based on error state
+  const [loaded, error] = useFonts({
+    Inter_500Medium,
+  });
+  useEffect(() => {}, []);
   return (
     <View>
       <Text>{id}</Text>
