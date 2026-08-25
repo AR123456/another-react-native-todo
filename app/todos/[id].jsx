@@ -29,6 +29,7 @@ export default function EditScreen() {
         const storageTodos = jsonValue != null ? JSON.parse(jsonValue) : null;
         if (storageTodos && storageTodos.length) {
           const myTodo = storageTodos.find((todo) => todo.id.toString() === id);
+          setTodo(myTodo);
         }
       } catch (e) {
         console.error(e);
