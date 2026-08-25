@@ -21,7 +21,15 @@ export default function EditScreen() {
   const [loaded, error] = useFonts({
     Inter_500Medium,
   });
-  useEffect(() => {}, []);
+  useEffect(() => {
+    // get from local storage  , then save back when done
+    const fetchData = async (id) => {
+      try {
+      } catch (e) {
+        console.error(e);
+      }
+    };
+  }, []);
   // check state for font- wait for it to load
   if (!loaded && !error) {
     return null;
