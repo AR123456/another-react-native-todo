@@ -25,6 +25,8 @@ export default function EditScreen() {
     // get from local storage  , then save back when done
     const fetchData = async (id) => {
       try {
+        const jsonValue = await AsyncStorage.getItem("TodoApp");
+        const storageTodos = jsonValue != null ? JSON.parse(jsonValue) : null;
       } catch (e) {
         console.error(e);
       }
