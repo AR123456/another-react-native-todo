@@ -28,7 +28,7 @@ export default function EditScreen() {
         const jsonValue = await AsyncStorage.getItem("TodoApp");
         const storageTodos = jsonValue != null ? JSON.parse(jsonValue) : null;
         if (storageTodos && storageTodos.length) {
-          const mytodo = storageTodos.find(id);
+          const myTodo = storageTodos.find((todo) => todo.id.toString() === id);
         }
       } catch (e) {
         console.error(e);
