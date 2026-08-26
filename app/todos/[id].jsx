@@ -35,11 +35,19 @@ export default function EditScreen() {
         console.error(e);
       }
     };
-  }, []);
+    fetchData(id);
+  }, [id]);
   // check state for font- wait for it to load
   if (!loaded && !error) {
     return null;
   }
+  // call with button click
+  const handleSave = async () => {
+    try {
+    } catch (e) {
+      console.error(e);
+    }
+  };
   return (
     <View>
       <Text>{id}</Text>
