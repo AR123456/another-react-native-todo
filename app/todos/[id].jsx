@@ -45,6 +45,8 @@ export default function EditScreen() {
   const handleSave = async () => {
     try {
     } catch (e) {
+      // push the title change to the list in async storage
+      const saveTodo = { ...todo, title: todo.title };
       console.error(e);
     }
   };
