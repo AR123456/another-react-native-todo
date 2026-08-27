@@ -55,6 +55,7 @@ export default function EditScreen() {
           (todo) => todo.id !== savedTodo.id,
         );
         const allTodos = [...otherTodos, savedTodo];
+        await AsyncStorage.setItem("TodoApp", JSON.stringify(allTodos));
       }
     } catch (e) {
       console.error(e);
