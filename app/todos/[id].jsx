@@ -56,6 +56,9 @@ export default function EditScreen() {
         );
         const allTodos = [...otherTodos, savedTodo];
         await AsyncStorage.setItem("TodoApp", JSON.stringify(allTodos));
+      } else {
+        ///take care of scenario where there is not yet an array in local storage
+        await AsyncStorage.setItem("TodoApp", JSON.stringify([savedTodo]));
       }
     } catch (e) {
       console.error(e);
