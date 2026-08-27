@@ -44,14 +44,12 @@ export default function EditScreen() {
   // call with button click
   const handleSave = async () => {
     try {
-  // push the title change to the list in async storage
+      // push the title change to the list in async storage
       const saveTodo = { ...todo, title: todo.title };
 
-      const jasonValue = await AsyncStorage.getItem("TodoApp");
-      const storageTodos = jsonValue!=null?JSON.parse(jasonValue)
-
+      const jsonValue = await AsyncStorage.getItem("TodoApp");
+      const storageTodos = jsonValue != null ? JSON.parse(jsonValue) : null;
     } catch (e) {
-      
       console.error(e);
     }
   };
