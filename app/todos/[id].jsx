@@ -66,9 +66,19 @@ export default function EditScreen() {
       console.error(e);
     }
   };
+  // edit page view
   return (
-    <View>
-      <Text>{id}</Text>
-    </View>
+    <SafeAreaView>
+      <View>
+        <TextInput />
+        <Pressable>light dark</Pressable>
+      </View>
+      <View>
+        <TextInput />
+        <Pressable>save</Pressable>
+        <Pressable>cancel</Pressable>
+      </View>
+      <StatusBar></StatusBar>
+    </SafeAreaView>
   );
 }
