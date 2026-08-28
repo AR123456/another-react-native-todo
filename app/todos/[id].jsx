@@ -45,10 +45,23 @@ export default function EditScreen() {
   const handleSave = async () => {
     try {
       // push the title change to the list in async storage
-      const saveTodo = { ...todo, title: todo.title };
+      const savedTodo = { ...todo, title: todo.title };
 
       const jsonValue = await AsyncStorage.getItem("TodoApp");
       const storageTodos = jsonValue != null ? JSON.parse(jsonValue) : null;
+      // filter out the id just edited , from that filtered list add the edited version back
+      if (storageTodos && storageTodos.length) {
+        const otherTodos = storageTodos.filter(
+          (todo) => todo.id !== savedTodo.id,
+        );
+        const allTodos = [...otherTodos, savedTodo];
+        await AsyncStorage.setItem("TodoApp", JSON.stringify(allTodos));
+      } else {
+        ///take care of scenario where there is not yet an array in local storage
+        await AsyncStorage.setItem("TodoApp", JSON.stringify([savedTodo]));
+      }
+      // go back to home page
+      router.push("/");
     } catch (e) {
       console.error(e);
     }
