@@ -72,12 +72,12 @@ export default function EditScreen() {
     <SafeAreaView>
       <View>
         <TextInput />
-        <Pressable>light dark</Pressable>
+        <Pressable onPress={() => {}}>light dark</Pressable>
       </View>
       <View>
         <TextInput />
-        <Pressable>save</Pressable>
-        <Pressable>cancel</Pressable>
+        <Pressable onPress={() => {}}>save</Pressable>
+        <Pressable onPress={() => {}}>cancel</Pressable>
       </View>
       <StatusBar style={colorScheme === "dark" ? "light" : "dark"}></StatusBar>
     </SafeAreaView>
