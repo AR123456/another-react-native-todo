@@ -9,6 +9,7 @@ import { Inter_500Medium, useFonts } from "@expo-google-fonts/inter";
 import Octicons from "@expo/vector-icons/Octicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
+import { Colors } from "@/constants/Colors";
 
 export default function EditScreen() {
   // when hook called id value passed to route
@@ -78,7 +79,7 @@ export default function EditScreen() {
         <Pressable>save</Pressable>
         <Pressable>cancel</Pressable>
       </View>
-      <StatusBar></StatusBar>
+      <StatusBar style={colorScheme === "dark" ? "light" : "dark"}></StatusBar>
     </SafeAreaView>
   );
 }
