@@ -22,6 +22,7 @@ export default function EditScreen() {
   const [loaded, error] = useFonts({
     Inter_500Medium,
   });
+  const styles = createStyles(theme, colorScheme);
   useEffect(() => {
     // get from local storage  , then save back when done
     const fetchData = async (id) => {
@@ -70,7 +71,7 @@ export default function EditScreen() {
   // edit page view
   return (
     <SafeAreaView style={StyleSheet.container}>
-      <View>
+      <View style={StyleSheet.inputContainer}>
         <TextInput />
         <Pressable onPress={() => {}}>light dark</Pressable>
       </View>
