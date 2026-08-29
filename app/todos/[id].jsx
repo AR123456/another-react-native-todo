@@ -72,7 +72,12 @@ export default function EditScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inputContainer}>
-        <TextInput />
+        <TextInput
+          style={styles.input}
+          placeholder="Edit todo"
+          placeholderTextColor="gray"
+          value={todo?.title || ""}
+        />
         <Pressable onPress={() => {}}>light dark</Pressable>
       </View>
       <View>
