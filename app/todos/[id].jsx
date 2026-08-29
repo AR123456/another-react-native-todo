@@ -69,7 +69,7 @@ export default function EditScreen() {
   };
   // edit page view
   return (
-    <SafeAreaView>
+    <SafeAreaView style={StyleSheet.container}>
       <View>
         <TextInput />
         <Pressable onPress={() => {}}>light dark</Pressable>
