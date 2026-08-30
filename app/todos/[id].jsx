@@ -81,7 +81,9 @@ export default function EditScreen() {
 
           onChangeText={(text) => setTodo((prev) => ({ ...prev, title: text }))}
         />
-        <Pressable onPress={() => {}}>light dark</Pressable>
+        <Pressable onPress={() => {}} style={{ marginLeft: 10 }}>
+          light dark
+        </Pressable>
       </View>
       <View>
         <TextInput />
