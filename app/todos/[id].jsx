@@ -78,9 +78,8 @@ export default function EditScreen() {
           placeholderTextColor="gray"
           value={todo?.title || ""}
           //  spread in value with use effect
-          onChangeText={(text) => {
-            setTodo({ ...todo, title: text });
-          }}
+
+          onChangeText={(text) => setTodo((prev) => ({ ...prev, title: text }))}
         />
         <Pressable onPress={() => {}}>light dark</Pressable>
       </View>
