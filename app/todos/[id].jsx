@@ -86,7 +86,7 @@ export default function EditScreen() {
           }
           style={{ marginLeft: 10 }}
         >
-          light dark
+          <Octicons name={colorScheme === "dark" ? "moon" : "sun"}></Octicons>
         </Pressable>
       </View>
       <View>
