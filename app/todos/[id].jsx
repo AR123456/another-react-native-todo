@@ -95,7 +95,7 @@ export default function EditScreen() {
           ></Octicons>
         </Pressable>
       </View>
-      <View>
+      <View style={styles.inputContainer}>
         <TextInput />
         <Pressable onPress={() => {}}>save</Pressable>
         <Pressable onPress={() => {}}>cancel</Pressable>
