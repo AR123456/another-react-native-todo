@@ -97,11 +97,7 @@ export default function EditScreen() {
       </View>
       <View style={styles.inputContainer}>
         <TextInput />
-        <Pressable
-          onPress={() => {
-            handleSave();
-          }}
-        >
+        <Pressable onPress={handleSave} style={styles.saveButton}>
           save
         </Pressable>
         <Pressable onPress={() => {}}>cancel</Pressable>
