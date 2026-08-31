@@ -97,7 +97,13 @@ export default function EditScreen() {
       </View>
       <View style={styles.inputContainer}>
         <TextInput />
-        <Pressable onPress={() => {}}>save</Pressable>
+        <Pressable
+          onPress={() => {
+            handleSave();
+          }}
+        >
+          save
+        </Pressable>
         <Pressable onPress={() => {}}>cancel</Pressable>
       </View>
       <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
