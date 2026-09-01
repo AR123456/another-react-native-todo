@@ -138,12 +138,12 @@ function createStyles(theme, colorScheme) {
       minWidth: 0,
       color: theme.text,
     },
-    addButton: {
+    saveButton: {
       backgroundColor: theme.button,
       borderRadius: 5,
       padding: 10,
     },
-    addButtonText: {
+    saveButtonText: {
       fontSize: 18,
       color: colorScheme === "dark" ? "black" : "white",
     },
