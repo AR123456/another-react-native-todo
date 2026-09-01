@@ -102,9 +102,9 @@ export default function EditScreen() {
         </Pressable>
         <Pressable
           onPress={() => router.push("/")}
-          style={[styles.saveButton, { color: "white" }]}
+          style={[styles.saveButton, { backgroundColor: "red" }]}
         >
-          <Text style={[styles.saveButtonText, { backgroundColor: "red" }]}>
+          <Text style={[styles.saveButtonText, { color: "white" }]}>
             Cancel
           </Text>
         </Pressable>
@@ -117,6 +117,7 @@ function createStyles(theme, colorScheme) {
   return StyleSheet.create({
     container: {
       flex: 1,
+      width: "100%",
       backgroundColor: theme.background,
     },
     inputContainer: {
@@ -149,30 +150,6 @@ function createStyles(theme, colorScheme) {
     saveButtonText: {
       fontSize: 18,
       color: colorScheme === "dark" ? "black" : "white",
-    },
-    // for flat list of items
-    todoItem: {
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "space-between",
-      gap: 4,
-      padding: 10,
-      borderBottomColor: "gray",
-      borderBottomWidth: 1,
-      width: "100%",
-      maxWidth: 1024,
-      marginHorizontal: "auto",
-      pointerEvents: "auto",
-    },
-    todoText: {
-      flex: 1,
-      fontSize: 18,
-      color: theme.text,
-      fontFamily: "Inter_500Medium",
-    },
-    completedText: {
-      textDecorationLine: "line-through",
-      color: "gray",
     },
   });
 }
