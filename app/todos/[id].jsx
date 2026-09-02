@@ -100,7 +100,10 @@ export default function EditScreen() {
         <Pressable onPress={handleSave} style={styles.saveButton}>
           <Text style={styles.saveButtonText}>Save</Text>
         </Pressable>
-        <Pressable onPress={() => router.push("/")}>
+        <Pressable
+          onPress={() => router.push("/")}
+          style={[styles.saveButton, { color: "white" }]}
+        >
           <Text style={[styles.saveButtonText, { backgroundColor: "red" }]}>
             Cancel
           </Text>
