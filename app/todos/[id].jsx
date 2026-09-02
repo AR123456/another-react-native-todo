@@ -125,6 +125,7 @@ function createStyles(theme, colorScheme) {
       alignItems: "center",
       marginBottom: 10,
       padding: 10,
+      gap: 6,
       width: "100%",
       maxWidth: 1024,
       marginHorizontal: "auto",
